@@ -21,4 +21,5 @@ jobs:
 
       - name: Run unit tests
         run: |
-          python3 ./mnt/init_load.py
+          cd ./mnt
+          python3 init_load.py
