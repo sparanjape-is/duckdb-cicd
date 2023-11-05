@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  py-duck:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: duck-py-container_name
+    tty: true
+    stdin_open: true
+    entrypoint: ["/bin/bash"]
+    volumes:
+      - ./mnt:/mnt/
