@@ -9,6 +9,8 @@ duckdb.sql("""ATTACH 'csv_db.db' as csv_db;
 # Show statements
 # duckdb.sql("SELECT * from customers ").show()
 # duckdb.sql("SELECT * from payments ").show()
+
+#Testing components
 df = duckdb.sql("""select first_name,last_name 
            from customers c
            inner join orders o
@@ -18,6 +20,6 @@ df = duckdb.sql("""select first_name,last_name
            where p.amount > 2500;
            """).fetchdf()
 
-print(df.shape)
-print(df)
+if df.shape[0] == 0:
+    raise ValueError('No rows returned from the query')
 # duckdb.sql("CREATE SCHEMA csv_db.jaffle_shop;")

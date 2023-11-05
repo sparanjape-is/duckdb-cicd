@@ -18,3 +18,7 @@ jobs:
           sudo python3 -m pip install --upgrade pip
           sudo python3 -m pip install pandas
           sudo python3 -m pip install duckdb
+
+      - name: Run unit tests
+        run: |
+          python3 ./mnt/init_load.py
