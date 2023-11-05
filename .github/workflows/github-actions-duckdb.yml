@@ -1,0 +1,20 @@
+name: GitHub Actions Duck db demo
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      
+      - name: Install python packages
+        run: |
+          sudo apt-get update
+          sudo python3 -m pip install --upgrade pip
+          sudo python3 -m pip install --upgrade pip
+          sudo python3 -m pip install pandas
+          sudo python3 -m pip install duckdb
