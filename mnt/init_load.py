@@ -13,6 +13,7 @@ duckdb.sql("""ATTACH 'csv_db.db' as csv_db;
 #Testing components
 df = duckdb.sql("""select first_name,last_name 
            from customers c
+            from
            inner join orders o
            on o.user_id = c.id
            inner join payments p
